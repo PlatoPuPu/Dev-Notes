@@ -8,4 +8,4 @@
 - 01.Uni-App开发时page.json中H5页面导航栏设置的问题
 - 02.Uni-App Vue下实现页面tabs组件分类循环查询
 ### 2. Python Application
-- [01.Pyinstaller打包时包含sitepackages的简单解决](PythonApplication/01.Pyinstaller打包sitepackages.md)
+- [01.Pyinstaller打包时包含sitepackages的简单解决](PythonApplication/01.Pyinstaller打包时包含sitepackages的简单解决.md)
