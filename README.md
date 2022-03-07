@@ -4,7 +4,7 @@
 > 联系方式wechat: luo1jun
 
 # **内容分类目录**
-### 1. [前端开发]((Frontend/))
+### 1. [前端开发](Frontend/)
 - 01.Uni-App开发时page.json中H5页面导航栏设置的问题
 - 02.Uni-App Vue下实现页面tabs组件分类循环查询
 ### 2. Python Application
