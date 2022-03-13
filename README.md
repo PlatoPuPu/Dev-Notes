@@ -1,7 +1,8 @@
 # Dev-Notes
 自最近开始在公司开发项目以来，经常会遇到一些比较花费时间去解决问题的点。在此作为一个记录仓库。
 > 目前仓库的内容维护和更新都由Martin维护。
-> <image width="40%" height="auto" src="https://github.com/PlatoPuPu/Dev-Notes/blob/main/image/wechatQR.jpeg">
+> 
+> <image width="30%" height="auto" src="https://github.com/PlatoPuPu/Dev-Notes/blob/main/image/wechatQR.jpeg">
 
 # **内容分类目录**
 ### 1. [前端开发](Frontend/)
