@@ -1,0 +1,62 @@
+​
+开发环境为Uni-App
+
+主要需要实现的功能，在当前页面载入之后通过fetch获得后台数据，但在当前页面需要按照tabs分类展示，而不是一股脑的用block v-for进行列表循环展示。
+
+tabs作为非常常用的组件，实现不再这里赘述，主要使用nav, currentTab等功能。示例：
+
+```HTML
+<tui-tabs :tabs="navbar" :currentTab="currentTab>4?0:currentTab" 
+@change="change" :size="26" bottom="50%" :backgroundColor="backgroundColor" color="#39A692" selectedColor="#fff" 
+:sliderWidth="140" :sliderHeight="52" :sliderBgColor="backgroundColorBar" :unlined="true":itemWidth="(100/navbar.length)+'%'">
+</tui-tabs>
+```
+
+重点方法在于：
+
+1. list view class中使用v-if，对应的在change方法中通过switch方式来实现；
+
+2. 在fetch方法中，将从数据拉取的所有数据，按照tabs数量分类成几个子列。
+
+具体示例为：
+
+```HTML
+<view class="list-view" v-if="batt">
+<block v-for="(item,index) in listDataBatt" :key="index">
+//你需要循环展示的内容
+</block>
+</view>	
+//method里面的内容
+change(e) {			
+	this.currentTab = e.index			
+	switch (e.index){
+	case 0:
+		this.batt=true;
+		this.pcs=false;
+		this.elec=false;
+		this.fire=false;
+		this.env=false					
+		break;
+		case 1:
+		this.batt=false;
+		this.pcs=true;
+		this.elec=false;
+		this.fire=false;
+		this.env=false	
+		break;
+}
+}
+
+//fetch里面的内容
+for(var i=0;i<listFaultData.length;i++){						
+	if(listFaultData[i].errorCategory == 1){					       						   
+	this.listDataBatt.push(listFaultData[i]);}
+	if(listFaultData[i].errorCategory == 2){						  						   
+	this.listDataPCS.push(listFaultData[i]);}
+}
+```
+在上述示例中，tab1的关键字为"batt", 首先在html段写上v-if="batt"，然后在相应的chage段写上switch case相应的内容，true为展示，false为不显示。然后在tab1下希望循环的列表为listDataBatt, 应在fetch后利用相应的方法进行分类。这里用到的是js中的push，但使用的位置不对会导致重复元素一直往列表中添加，需要注意。
+
+仅为工作项目上遇到的随记，希望有所帮助~
+
+​
